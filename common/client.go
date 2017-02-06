@@ -2,8 +2,8 @@ package common
 
 import (
 	"bytes"
-	"encoding/json"
 	"encoding/xml"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -61,6 +61,27 @@ func (client *Client) SetDebug(debug bool) {
 	client.debug = debug
 }
 
+func formatXML(data []byte) ([]byte, error) {
+	b := &bytes.Buffer{}
+	decoder := xml.NewDecoder(bytes.NewReader(data))
+	encoder := xml.NewEncoder(b)
+	encoder.Indent("", "  ")
+	for {
+		token, err := decoder.Token()
+		if err == io.EOF {
+			encoder.Flush()
+			return b.Bytes(), nil
+		}
+		if err != nil {
+			return nil, err
+		}
+		err = encoder.EncodeToken(token)
+		if err != nil {
+			return nil, err
+		}
+	}
+}
+
 // Invoke sends the raw HTTP request for ksyun services
 func (client *Client) Invoke(action string, args interface{}, response interface{}) error {
 
@@ -105,9 +126,8 @@ func (client *Client) Invoke(action string, args interface{}, response interface
 	}
 
 	if client.debug {
-		var prettyJSON bytes.Buffer
-		err = json.Indent(&prettyJSON, body, "", "    ")
-		log.Println(string(prettyJSON.Bytes()))
+		data, _ := formatXML(body)
+		log.Println(string(data))
 	}
 
 	if statusCode >= 400 && statusCode <= 599 {

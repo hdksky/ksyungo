@@ -35,6 +35,7 @@ type NetworkInterfaceSetType struct {
 	NetworkInterfaceType string
 	MacAddress           string
 	SubnetId             string
+	VpcId                string
 	PrivateIpAddress     string
 	SecurityGroupSet     struct {
 		Item []SecurityGroupGroup
@@ -53,7 +54,6 @@ type Instance struct {
 		Name string
 	}
 	SubnetId         string
-	VpcId            string
 	PrivateIpAddress string
 	Monitoring       struct {
 		State string

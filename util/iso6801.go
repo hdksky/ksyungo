@@ -1,6 +1,7 @@
 package util
 
 import (
+	"encoding/xml"
 	"fmt"
 	"strconv"
 	"time"
@@ -40,6 +41,24 @@ func NewISO6801Time(t time.Time) ISO6801Time {
 // IsDefault checks if the time is default
 func (it *ISO6801Time) IsDefault() bool {
 	return *it == ISO6801Time{}
+}
+
+// MarshalXML serializes the ISO6801Time into XML string
+func (it ISO6801Time) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+	data, err := it.MarshalJSON()
+	if err != nil {
+		return err
+	}
+	e.EncodeElement(data, start)
+	return nil
+}
+
+// UnmarshalXML deserializes the ISO6801Time from XML string
+func (it *ISO6801Time) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	var t time.Time
+	d.DecodeElement(&t, &start)
+	*it = NewISO6801Time(t)
+	return nil
 }
 
 // MarshalJSON serializes the ISO6801Time into JSON string
