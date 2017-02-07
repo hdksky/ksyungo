@@ -1,6 +1,10 @@
 package slb
 
-import "github.com/hdksky/ksyungo/common"
+import (
+	"time"
+
+	"github.com/hdksky/ksyungo/common"
+)
 
 type CreateLoadBalancerArgs struct {
 	VpcId            string
@@ -10,7 +14,7 @@ type CreateLoadBalancerArgs struct {
 }
 
 type LoadBalancerDescription struct {
-	CreateTime        string
+	CreateTime        time.Time
 	LoadBalancerName  string
 	VpcId             string
 	LoadBalancerId    string

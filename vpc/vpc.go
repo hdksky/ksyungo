@@ -1,9 +1,13 @@
 package vpc
 
-import "github.com/hdksky/ksyungo/common"
+import (
+	"time"
+
+	"github.com/hdksky/ksyungo/common"
+)
 
 type VpcType struct {
-	CreateTime string
+	CreateTime time.Time
 	VpcName    string
 	VpcId      string
 	CidrBlock  string

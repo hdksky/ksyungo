@@ -1,6 +1,10 @@
 package eip
 
-import "github.com/hdksky/ksyungo/common"
+import (
+	"time"
+
+	"github.com/hdksky/ksyungo/common"
+)
 
 type AllocateAddressArgs struct {
 	LineId       string
@@ -88,7 +92,7 @@ type DescribeAddressesArgs struct {
 }
 
 type AddressType struct {
-	CreateTime         string
+	CreateTime         time.Time
 	PublicIp           string
 	AllocationId       string
 	State              string
