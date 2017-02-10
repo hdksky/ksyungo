@@ -32,11 +32,21 @@ type CreateLoadBalancerResponse struct {
 
 // CreateLoadBalancer create load balancer
 // You can read doc at https://docs.ksyun.com/read/latest/55/_book/Action/CreateLoadBalancer.html
-func (c *Client) CreateLoadBalancer(args *CreateLoadBalancerArgs) (*CreateLoadBalancerResponse, error) {
+func (c *Client) CreateLoadBalancer(args *CreateLoadBalancerArgs) ([]LoadBalancerDescription, error) {
 	response := CreateLoadBalancerResponse{}
 	err := c.Invoke("CreateLoadBalancer", args, &response)
 	if err == nil {
-		return &response, nil
+		return []LoadBalancerDescription{{
+			CreateTime:        response.CreateTime,
+			LoadBalancerName:  response.LoadBalancerName,
+			VpcId:             response.VpcId,
+			LoadBalancerId:    response.LoadBalancerId,
+			Type:              response.Type,
+			SubnetId:          response.SubnetId,
+			PublicIp:          response.PublicIp,
+			State:             response.State,
+			LoadBalancerState: response.LoadBalancerState,
+		}}, nil
 	}
 	return nil, err
 }

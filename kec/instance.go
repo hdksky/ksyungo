@@ -139,9 +139,9 @@ type InstancesStateChangeResponse struct {
 // TerminateInstances Terminate Instances
 // you can read doc at https://docs.ksyun.com/read/latest/52/_book/oaTerminateInstances.html
 // 约束条件1：在销毁实例时，需要先解绑实例已挂载的EBS数据盘、SLB、EIP资源
-func (c *Client) TerminateInstances(args *TerminateInstancesArgs) ([]InstanceStateChange, error) {
+func (c *Client) TerminateInstances(instanceIds []string) ([]InstanceStateChange, error) {
 	response := InstancesStateChangeResponse{}
-	err := c.Invoke("TerminateInstances", args, &response)
+	err := c.Invoke("TerminateInstances", instanceIds, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
@@ -150,9 +150,9 @@ func (c *Client) TerminateInstances(args *TerminateInstancesArgs) ([]InstanceSta
 
 // StartInstances Start Instances
 // you can read doc at https://docs.ksyun.com/read/latest/52/_book/oaStartInstances.html
-func (c *Client) StartInstances(InstanceIds []string) ([]InstanceStateChange, error) {
+func (c *Client) StartInstances(instanceIds []string) ([]InstanceStateChange, error) {
 	response := InstancesStateChangeResponse{}
-	err := c.Invoke("StartInstances", InstanceIds, &response)
+	err := c.Invoke("StartInstances", instanceIds, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
@@ -161,9 +161,9 @@ func (c *Client) StartInstances(InstanceIds []string) ([]InstanceStateChange, er
 
 // StopInstances Stop Instances
 // you can read doc at https://docs.ksyun.com/read/latest/52/_book/oaStopInstances.html
-func (c *Client) StopInstances(InstanceIds []string) ([]InstanceStateChange, error) {
+func (c *Client) StopInstances(instanceIds []string) ([]InstanceStateChange, error) {
 	response := InstancesStateChangeResponse{}
-	err := c.Invoke("StopInstances", InstanceIds, &response)
+	err := c.Invoke("StopInstances", instanceIds, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
@@ -172,9 +172,9 @@ func (c *Client) StopInstances(InstanceIds []string) ([]InstanceStateChange, err
 
 // RebootInstances Reboot Instances
 // you can read doc at https://docs.ksyun.com/read/latest/52/_book/oaRebootInstances.html
-func (c *Client) RebootInstances(InstanceIds []string) ([]InstanceStateChange, error) {
+func (c *Client) RebootInstances(instanceIds []string) ([]InstanceStateChange, error) {
 	response := InstancesStateChangeResponse{}
-	err := c.Invoke("RebootInstances", InstanceIds, &response)
+	err := c.Invoke("RebootInstances", instanceIds, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
