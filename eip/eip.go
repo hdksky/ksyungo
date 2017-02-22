@@ -7,6 +7,7 @@ import (
 )
 
 type AllocateAddressArgs struct {
+	Region       string
 	LineId       string
 	BandWidth    int
 	ChargeType   string
@@ -22,10 +23,10 @@ type AllocateAddressResponse struct {
 // AllocateAddress 创建EIP
 // You can read doc at https://docs.ksyun.com/read/latest/57/_book/Action/AllocateAddress.html
 func (c *Client) AllocateAddress(args *AllocateAddressArgs) (*AllocateAddressResponse, error) {
-	response := AllocateAddressResponse{}
-	err := c.Invoke("AllocateAddress", nil, &response)
+	response := &AllocateAddressResponse{}
+	err := c.Invoke("AllocateAddress", nil, response)
 	if err == nil {
-		return &response, nil
+		return response, nil
 	}
 	return nil, err
 }
