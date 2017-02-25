@@ -13,7 +13,7 @@ const DefaultWaitForInterval = 5
 // DefaultTimeout Default timeout value for WaitForXXX method
 const DefaultTimeout = 60
 
-const service = "vpc"
+const service = "eip"
 
 type Client struct {
 	common.Client
