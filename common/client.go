@@ -89,7 +89,9 @@ func (client *Client) Invoke(action string, args interface{}, response interface
 	request.init(client.version, action, client.AccessKeyId)
 
 	query := util.ConvertToQueryValues(request)
-	util.SetQueryValues(args, &query)
+	if args != nil {
+		util.SetQueryValues(args, &query)
+	}
 
 	// Generate the request URL
 	requestURL := client.endpoint + "?" + query.Encode()

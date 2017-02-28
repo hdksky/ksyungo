@@ -27,7 +27,11 @@ type DescribeImagesResponse struct {
 // You can read doc at https://docs.ksyun.com/read/latest/52/_book/oaDescribeImages.html
 func (c *Client) DescribeImages(imageid string) ([]ImageType, error) {
 	response := DescribeImagesResponse{}
-	err := c.Invoke("DescribeImages", imageid, &response)
+	var args interface{}
+	if imageid != "" {
+		args = imageid
+	}
+	err := c.Invoke("DescribeImages", args, &response)
 	if err == nil {
 		return response.ImagesSet.Item, nil
 	}
