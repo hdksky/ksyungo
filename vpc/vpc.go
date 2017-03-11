@@ -1,23 +1,23 @@
 package vpc
 
-import (
-	"time"
-
-	"github.com/hdksky/ksyungo/common"
-)
+import "github.com/hdksky/ksyungo/common"
 
 type VpcType struct {
-	CreateTime time.Time
+	CreateTime string
 	VpcName    string
 	VpcId      string
 	CidrBlock  string
 	IsDefault  bool
 }
 
+type DescribeVpcsArgs struct {
+	VpcIds []string
+}
+
 type DescribeVpcsResponse struct {
 	common.Response
 	VpcSet struct {
-		Item []VpcType
+		Item []VpcType `xml:"item"`
 	}
 }
 
@@ -25,7 +25,8 @@ type DescribeVpcsResponse struct {
 // You can read doc at https://docs.ksyun.com/read/latest/56/_book/Action/Vpcs/DescribeVpcs.html
 func (c *Client) DescribeVpcs(vpcIds []string) (*DescribeVpcsResponse, error) {
 	response := DescribeVpcsResponse{}
-	err := c.Invoke("DescribeVpcs", vpcIds, &response)
+	args := &DescribeVpcsArgs{VpcIds: vpcIds}
+	err := c.Invoke("DescribeVpcs", args, &response)
 	if err == nil {
 		return &response, nil
 	}
