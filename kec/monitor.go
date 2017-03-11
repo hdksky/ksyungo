@@ -9,6 +9,9 @@ type InstanceMonitoringType struct {
 	}
 }
 
+type MonitorInstancesArgs struct {
+	InstanceId []string
+}
 type MonitorInstancesResponse struct {
 	common.Response
 	InstancesSet struct {
@@ -20,13 +23,17 @@ type MonitorInstancesResponse struct {
 // You can read doc at https://docs.ksyun.com/read/latest/52/_book/oaMonitorInstances.html
 func (c *Client) MonitorInstances(instanceId []string) ([]InstanceMonitoringType, error) {
 	response := MonitorInstancesResponse{}
-	err := c.Invoke("MonitorInstances", instanceId, &response)
+	args := &MonitorInstancesArgs{InstanceId: instanceId}
+	err := c.Invoke("MonitorInstances", args, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
 	return nil, err
 }
 
+type UnmonitorInstancesArgs struct {
+	InstanceId []string
+}
 type UnmonitorInstancesResponse struct {
 	common.Response
 	InstancesSet struct {
@@ -38,7 +45,8 @@ type UnmonitorInstancesResponse struct {
 // You can read doc at https://docs.ksyun.com/read/latest/52/_book/oaUnmonitorInstances.html
 func (c *Client) UnmonitorInstances(instanceId []string) ([]InstanceMonitoringType, error) {
 	response := UnmonitorInstancesResponse{}
-	err := c.Invoke("UnmonitorInstances", instanceId, &response)
+	args := &UnmonitorInstancesArgs{InstanceId: instanceId}
+	err := c.Invoke("UnmonitorInstances", args, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}

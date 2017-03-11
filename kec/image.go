@@ -23,14 +23,15 @@ type DescribeImagesResponse struct {
 	}
 }
 
+type DescribeImagesArgs struct {
+	ImageId string
+}
+
 // DescribeImages 获取所有镜像
 // You can read doc at https://docs.ksyun.com/read/latest/52/_book/oaDescribeImages.html
 func (c *Client) DescribeImages(imageid string) ([]ImageType, error) {
 	response := DescribeImagesResponse{}
-	var args interface{}
-	if imageid != "" {
-		args = imageid
-	}
+	args := &DescribeImagesArgs{ImageId: imageid}
 	err := c.Invoke("DescribeImages", args, &response)
 	if err == nil {
 		return response.ImagesSet.Item, nil
@@ -71,11 +72,16 @@ type RemoveImageResponse struct {
 	}
 }
 
+type RemoveImagesArgs struct {
+	ImageIds []string
+}
+
 // RemoveImages remove image
 // You can read doc at https://docs.ksyun.com/read/latest/52/_book/oaRemoveImages.html
 func (c *Client) RemoveImages(imageIds []string) ([]ImageDeletion, error) {
 	response := RemoveImageResponse{}
-	err := c.Invoke("RemoveImages", imageIds, &response)
+	args := &RemoveImagesArgs{ImageIds: imageIds}
+	err := c.Invoke("RemoveImages", args, &response)
 	if err == nil {
 		return response.ReturnSet.Item, nil
 	}

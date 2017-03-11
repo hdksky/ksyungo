@@ -141,40 +141,56 @@ type InstancesStateChangeResponse struct {
 // 约束条件1：在销毁实例时，需要先解绑实例已挂载的EBS数据盘、SLB、EIP资源
 func (c *Client) TerminateInstances(instanceIds []string) ([]InstanceStateChange, error) {
 	response := InstancesStateChangeResponse{}
-	err := c.Invoke("TerminateInstances", instanceIds, &response)
+	args := &TerminateInstancesArgs{InstanceId: instanceIds}
+	err := c.Invoke("TerminateInstances", args, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
 	return nil, err
+}
+
+type StartInstancesArgs struct {
+	InstanceIds []string
 }
 
 // StartInstances Start Instances
 // you can read doc at https://docs.ksyun.com/read/latest/52/_book/oaStartInstances.html
 func (c *Client) StartInstances(instanceIds []string) ([]InstanceStateChange, error) {
 	response := InstancesStateChangeResponse{}
-	err := c.Invoke("StartInstances", instanceIds, &response)
+	args := &StartInstancesArgs{InstanceIds: instanceIds}
+	err := c.Invoke("StartInstances", args, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
 	return nil, err
+}
+
+type StopInstancesArgs struct {
+	InstanceIds []string
 }
 
 // StopInstances Stop Instances
 // you can read doc at https://docs.ksyun.com/read/latest/52/_book/oaStopInstances.html
 func (c *Client) StopInstances(instanceIds []string) ([]InstanceStateChange, error) {
 	response := InstancesStateChangeResponse{}
-	err := c.Invoke("StopInstances", instanceIds, &response)
+	args := &StartInstancesArgs{InstanceIds: instanceIds}
+	err := c.Invoke("StopInstances", args, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
 	return nil, err
 }
 
+type RebootInstancesArgs struct {
+	InstanceIds []string
+}
+
 // RebootInstances Reboot Instances
 // you can read doc at https://docs.ksyun.com/read/latest/52/_book/oaRebootInstances.html
 func (c *Client) RebootInstances(instanceIds []string) ([]InstanceStateChange, error) {
 	response := InstancesStateChangeResponse{}
-	err := c.Invoke("RebootInstances", instanceIds, &response)
+	args := &RebootInstancesArgs{InstanceIds: instanceIds}
+	err := c.Invoke("RebootInstances", args, &response)
 	if err == nil {
 		return response.InstancesSet.Item, nil
 	}
