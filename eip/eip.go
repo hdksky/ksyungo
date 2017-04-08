@@ -7,7 +7,7 @@ import (
 )
 
 type AllocateAddressArgs struct {
-	Region       string
+	RegionId       string
 	LineId       string
 	BandWidth    int
 	ChargeType   string
