@@ -102,7 +102,7 @@ func (client *Client) Invoke(action string, args interface{}, response interface
 	}
 
 	// TODO move to util and add build val flag
-	httpReq.Header.Set("X-SDK-Client", `KsyunGO/`+Version)
+	//httpReq.Header.Set("X-SDK-Client", `KsyunGO/`+Version)
 	//httpReq.Header.Set("Accept", "application/json")
 	httpReq.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 

@@ -11,7 +11,7 @@ import (
 // Constants for Ksyun API requests
 const (
 	SignatureVersion   = "1.0"
-	SignatureMethod    = "HMAC-SHA256"
+	SignatureMethod    = "AWS4-HMAC-SHA256"
 	JSONResponseFormat = "JSON"
 	XMLResponseFormat  = "XML"
 	RequestMethod      = "GET"
