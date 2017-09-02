@@ -1,34 +1,30 @@
 package eip
 
 import (
-	"time"
-
+	"errors"
 	"github.com/hdksky/ksyungo/common"
 )
-
-type AllocateAddressArgs struct {
-	RegionId       string
-	LineId       string
-	BandWidth    int
-	ChargeType   string
-	PurchaseTime int
-}
-
-type AllocateAddressResponse struct {
-	common.Response
-	PublicIp     string
-	AllocationId string
-}
 
 // AllocateAddress 创建EIP
 // You can read doc at https://docs.ksyun.com/read/latest/57/_book/Action/AllocateAddress.html
 func (c *Client) AllocateAddress(args *AllocateAddressArgs) (*AllocateAddressResponse, error) {
+	if args == nil {
+		return nil, errors.New("create eip param not found")
+	}
+	if err := args.validate(); err != nil {
+		return nil, err
+	}
+
 	response := &AllocateAddressResponse{}
-	err := c.Invoke("AllocateAddress", nil, response)
+	err := c.Invoke("AllocateAddress", args, response)
 	if err == nil {
 		return response, nil
 	}
 	return nil, err
+}
+
+type ReleaseAddressArgs struct {
+	AllocationId string
 }
 
 type ReleaseAddressResponse struct {
@@ -38,9 +34,9 @@ type ReleaseAddressResponse struct {
 
 // ReleaseAddress 创建EIP
 // You can read doc at https://docs.ksyun.com/read/latest/57/_book/Action/ReleaseAddress.html
-func (c *Client) ReleaseAddress(allocationId string) (bool, error) {
+func (c *Client) ReleaseAddress(args *ReleaseAddressArgs) (bool, error) {
 	response := ReleaseAddressResponse{}
-	err := c.Invoke("ReleaseAddress", allocationId, &response)
+	err := c.Invoke("ReleaseAddress", args, &response)
 	if err == nil {
 		return response.Return, nil
 	}
@@ -92,8 +88,8 @@ type DescribeAddressesArgs struct {
 	NextToken    string
 }
 
-type AddressType struct {
-	CreateTime         time.Time
+type AddressDetail struct {
+	CreateTime         string
 	PublicIp           string
 	AllocationId       string
 	State              string
@@ -110,18 +106,39 @@ type AddressType struct {
 type DescribeAddressesResponse struct {
 	common.Response
 	AddressesSet struct {
-		Item []AddressType
+		Item []AddressDetail `xml:"item"`
 	}
 	NextToken string
 }
 
 // DescribeAddresses 描述EIP
 // You can read doc at https://docs.ksyun.com/read/latest/57/_book/Action/DescribeAddresses.html
-func (c *Client) DescribeAddresses(args *DescribeAddressesArgs) (*DescribeAddressesResponse, error) {
-	response := DescribeAddressesResponse{}
+func (c *Client) DescribeAddresses(args *DescribeAddressesArgs) ([]AddressDetail, error) {
+	var response DescribeAddressesResponse
 	err := c.Invoke("DescribeAddresses", args, &response)
-	if err == nil {
-		return &response, nil
+
+	return response.AddressesSet.Item, err
+}
+
+type ModifyAddressArgs struct {
+	AllocationId string `json:"allocationId"`
+	BandWidth    int    `json:"bandWidth"`
+}
+
+type ModifyAddressResponse AddressDetail
+
+// ModifyAddress 更新EIP
+// doc ref https://docs.ksyun.com/read/latest/57/_book/Action/ModifyAddress.html
+func (c *Client) ModifyAddress(args *ModifyAddressArgs) (*AddressDetail, error) {
+	var response ModifyAddressResponse
+	if err := args.validate(); err != nil {
+		return nil, err
 	}
-	return nil, err
+
+	if err := c.Invoke("ModifyAddress", args, &response); err != nil {
+		return nil, err
+	}
+
+	newAddr := AddressDetail(response)
+	return &newAddr, nil
 }

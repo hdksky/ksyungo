@@ -2,8 +2,8 @@ package slb
 
 //Modify with your Access Key Id and Access Key Secret
 const (
-	TestAccessKeyId     = "MY_ID"
-	TestAccessKeySecret = "MY_SECRET"
+	TestAccessKeyId     = "AKLTUxyeuc11TQ2gRi2yJN7FiA"
+	TestAccessKeySecret = "OHp/RfCLH+/c5rrH/+k0g9Mih3289ZonVyMITpordadELY6CzsECZcIc+X/oslbJCQ=="
 	TestInstanceId      = "MY_INSTANCE_ID"
 	Region              = "cn-beijing-6"
 	TestIAmRich         = false

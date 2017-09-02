@@ -3,8 +3,8 @@ package kec
 //Modify with your Access Key Id and Access Key Secret
 
 const (
-	TestAccessKeyId     = "MY_ID"
-	TestAccessKeySecret = "MY_Secret"
+	TestAccessKeyId     = "AKLTUxyeuc11TQ2gRi2yJN7FiA"
+	TestAccessKeySecret = "OHp/RfCLH+/c5rrH/+k0g9Mih3289ZonVyMITpordadELY6CzsECZcIc+X/oslbJCQ=="
 	TestInstanceId      = "MY_TEST_INSTANCE_ID"
 	TestSecurityGroupId = "MY_TEST_SECURITY_GROUP_ID"
 	TestImageId         = "MY_TEST_IMAGE_ID"
