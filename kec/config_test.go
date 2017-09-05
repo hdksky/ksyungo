@@ -5,6 +5,7 @@ package kec
 const (
 	TestAccessKeyId     = "AKLTUxyeuc11TQ2gRi2yJN7FiA"
 	TestAccessKeySecret = "OHp/RfCLH+/c5rrH/+k0g9Mih3289ZonVyMITpordadELY6CzsECZcIc+X/oslbJCQ=="
+	TestRegionId        = "cn-beijing-6"
 	TestInstanceId      = "MY_TEST_INSTANCE_ID"
 	TestSecurityGroupId = "MY_TEST_SECURITY_GROUP_ID"
 	TestImageId         = "MY_TEST_IMAGE_ID"
@@ -18,7 +19,7 @@ var testClient *Client
 
 func NewTestClient() *Client {
 	if testClient == nil {
-		testClient = NewClient(TestAccessKeyId, TestAccessKeySecret, "cn-beijing-6")
+		testClient = NewClient(TestAccessKeyId, TestAccessKeySecret, TestRegionId)
 	}
 	return testClient
 }
@@ -27,7 +28,7 @@ var testDebugClient *Client
 
 func NewTestClientForDebug() *Client {
 	if testDebugClient == nil {
-		testDebugClient = NewClient(TestAccessKeyId, TestAccessKeySecret, "cn-beijing-6")
+		testDebugClient = NewClient(TestAccessKeyId, TestAccessKeySecret, TestRegionId)
 		testDebugClient.SetDebug(true)
 	}
 	return testDebugClient

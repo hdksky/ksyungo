@@ -1,9 +1,7 @@
 package util
 
 import (
-	"encoding/json"
 	"fmt"
-	"log"
 	"net/url"
 	"reflect"
 	"strconv"
@@ -93,15 +91,24 @@ func setQueryValues(i interface{}, values *url.Values, prefix string) {
 			case reflect.String:
 				l := field.Len()
 				if l > 0 {
-					strArray := make([]string, l)
-					for i := 0; i < l; i++ {
-						strArray[i] = field.Index(i).String()
-					}
-					bytes, err := json.Marshal(strArray)
-					if err == nil {
-						value = string(bytes)
+					N := elemType.Field(i).Tag.Get("opt")
+					if N == "N" {
+						for j := 0; j < l; j++ {
+							nName := fmt.Sprintf("%s.%d", fieldName, (j + 1))
+							v := field.Index(j).Interface()
+							if nValue, ok := v.(string); ok {
+								values.Set(nName, nValue)
+							}
+						}
 					} else {
-						log.Printf("Failed to convert JSON: %v", err)
+						for i := 0; i < l; i++ {
+							key := fmt.Sprintf("%s%s.%d", prefix, fieldName, i+1)
+							vStr := field.Index(i).String()
+							if len(vStr) == 0 {
+								continue
+							}
+							values.Set(key, field.Index(i).String())
+						}
 					}
 				}
 			default:
@@ -109,7 +116,6 @@ func setQueryValues(i interface{}, values *url.Values, prefix string) {
 				for j := 0; j < l; j++ {
 					prefixName := fmt.Sprintf("%s.%d.", fieldName, (j + 1))
 					ifc := field.Index(j).Interface()
-					//log.Printf("%s : %v", prefixName, ifc)
 					if ifc != nil {
 						setQueryValues(ifc, values, prefixName)
 					}

@@ -1,20 +1,21 @@
 package kec
 
 import (
+	"fmt"
 	"github.com/hdksky/ksyungo/common"
 	"github.com/hdksky/ksyungo/util"
 )
 
 type KV struct {
 	Name  string
-	Value string
+	Value []string
 }
 
 type DescribeInstancesArgs struct {
 	MaxResults int
 	Marker     int
 	InstanceId string
-	Filters    []KV
+	Filter     []KV
 	Sort       []KV
 	Search     string
 }
@@ -112,6 +113,9 @@ type RunInstancesResponse struct {
 // RunInstances create instances
 // you can read doc at https://docs.ksyun.com/read/latest/52/_book/oaRunInstances.html
 func (c *Client) RunInstances(args *RunInstancesArgs) ([]Instance, error) {
+	if err := args.validate(); err != nil {
+		return nil, err
+	}
 	response := RunInstancesResponse{}
 	err := c.Invoke("RunInstances", args, &response)
 	if err == nil {
@@ -345,4 +349,19 @@ func (c *Client) DetachNetworkInterface(args *DetachNetworkInterfaceArgs) (bool,
 		return response.Return, nil
 	}
 	return false, err
+}
+
+type AvailabilityZoneArgs struct {
+	Region string
+}
+
+func (c *Client) AvailabilityZone(args *AvailabilityZoneArgs) error {
+	var response interface{}
+	err := c.Invoke("AvailabilityZoneArgs", args, &response)
+	if err != nil {
+		return err
+	}
+
+	fmt.Printf("=------------------>%", response)
+	return nil
 }

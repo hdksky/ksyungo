@@ -145,3 +145,7 @@ func GenerateRandomECSPassword() string {
 	return string(s)
 
 }
+
+type Kv interface {
+	Kv() (string, string)
+}

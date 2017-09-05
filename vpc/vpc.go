@@ -35,11 +35,11 @@ func (c *Client) DescribeVpcs(vpcIds []string) (*DescribeVpcsResponse, error) {
 
 type Kv struct {
 	Name  string
-	Value string
+	Value []string
 }
 
 type DescribeSubnetsArgs struct {
-	SubnetId []string
+	SubnetId []string `opt:"N"`
 	Filter   []Kv
 }
 
@@ -62,7 +62,7 @@ type SubnetType struct {
 type DescribeSubnetsResonse struct {
 	common.Response
 	SubnetSet struct {
-		Item []SubnetType
+		Item []SubnetType `xml:"item"`
 	}
 }
 
@@ -71,10 +71,11 @@ type DescribeSubnetsResonse struct {
 func (c *Client) DescribeSubnets(args *DescribeSubnetsArgs) ([]SubnetType, error) {
 	response := DescribeSubnetsResonse{}
 	err := c.Invoke("DescribeSubnets", args, &response)
-	if err == nil {
-		return response.SubnetSet.Item, nil
+	if err != nil {
+		return nil, err
 	}
-	return nil, err
+
+	return response.SubnetSet.Item, nil
 }
 
 type DescribeSecurityGroupsArgs struct {
@@ -86,15 +87,24 @@ type SecurityGroupType struct {
 	CreateTime            string
 	VpcId                 string
 	SecurityGroupName     string
-	SecurityGroupId       string
-	SecurityGroupType     string
-	SecurityGroupEntrySet string
+	SecurityGroupEntrySet struct {
+		Item []EntrySet `xml:"item"`
+	}
+}
+
+type EntrySet struct {
+	CidrBlock            string
+	Direction            string
+	PortRangeTo          uint16
+	PortRangeFrom        uint16
+	Protocol             string
+	SecurityGroupEntryId string
 }
 
 type DescribeSecurityGroupsResponse struct {
 	common.Response
 	SecurityGroupSet struct {
-		Item []SecurityGroupType
+		Item []SecurityGroupType `xml:"item"`
 	}
 }
 
