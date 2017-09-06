@@ -36,7 +36,6 @@ func TestClient_DescribeSubnets(t *testing.T) {
 		Filter: []Kv{{Name: "vpc-id", Value: vpcIds}},
 	}); err != nil {
 		t.Fatal(err)
-
 	}
 }
 
