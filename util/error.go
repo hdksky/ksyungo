@@ -23,5 +23,5 @@ func ParamValueInvalid(param string, min, max int) error {
 }
 
 func ParamNotInValidList(param string, l ...interface{}) error {
-	return fmt.Errorf("param %s not in valid list %v", param, l)
+	return fmt.Errorf("param %s is valid in [%v]", param, l)
 }

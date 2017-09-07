@@ -1,11 +1,16 @@
 package kec
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestClient_DescribeImages(t *testing.T) {
 	client := NewTestClientForDebug()
-	_, err := client.DescribeImages("")
+	imgs, err := client.DescribeImages("")
 	if err != nil {
 		t.Errorf("DescribeInstances failed: %v", err)
 	}
+
+	fmt.Printf("%#v\n", imgs)
 }

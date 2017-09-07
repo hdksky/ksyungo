@@ -83,10 +83,12 @@ type DescribeSecurityGroupsArgs struct {
 	Filter          []Kv
 }
 
-type SecurityGroupType struct {
+type SecurityGroup struct {
 	CreateTime            string
 	VpcId                 string
 	SecurityGroupName     string
+	SecurityGroupId       string
+	SecurityGroupType     string
 	SecurityGroupEntrySet struct {
 		Item []EntrySet `xml:"item"`
 	}
@@ -104,17 +106,17 @@ type EntrySet struct {
 type DescribeSecurityGroupsResponse struct {
 	common.Response
 	SecurityGroupSet struct {
-		Item []SecurityGroupType `xml:"item"`
+		Item []SecurityGroup `xml:"item"`
 	}
 }
 
 // DescribeSecurityGroups describe security groups
 // You can read doc at https://docs.ksyun.com/read/latest/56/_book/Action/SecurityGroups/DescribeSecurityGroups.html
-func (c *Client) DescribeSecurityGroups(args *DescribeSecurityGroupsArgs) ([]SecurityGroupType, error) {
+func (c *Client) DescribeSecurityGroups(args *DescribeSecurityGroupsArgs) ([]SecurityGroup, error) {
 	response := DescribeSecurityGroupsResponse{}
-	err := c.Invoke("DescribeSecurityGroups", args, &response)
-	if err == nil {
-		return response.SecurityGroupSet.Item, nil
+	if err := c.Invoke("DescribeSecurityGroups", args, &response); err != nil {
+		return nil, err
 	}
-	return nil, err
+
+	return response.SecurityGroupSet.Item, nil
 }

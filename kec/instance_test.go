@@ -18,35 +18,41 @@ func TestClient_RunInstances(t *testing.T) {
 		t.Fatal("create instance image not found")
 	}
 
-	var vpcId string
-	if vpcs, err := vpc.NewClient(TestAccessKeyId, TestAccessKeySecret, TestRegionId).
-		DescribeVpcs(nil); err != nil {
+	vpcCli := vpc.NewClient(TestAccessKeyId, TestAccessKeySecret, TestRegionId)
+	if vpcs, err := vpcCli.DescribeVpcs(nil); err != nil {
 		t.Fatal(err)
 	} else if len(vpcs.VpcSet.Item) == 0 {
 		t.Fatal("Vpcs not found")
-	} else {
-		vpcId = vpcs.VpcSet.Item[0].VpcId
 	}
 
-	var securityGroupId string
-	if sgs, err := vpc.NewClient(TestAccessKeyId, TestAccessKeySecret, TestRegionId).
-		DescribeSecurityGroups(&vpc.DescribeSecurityGroupsArgs{}); err != nil {
+	sbs, err := vpcCli.DescribeSubnets(&vpc.DescribeSubnetsArgs{})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if len(sbs) == 0 {
+		t.Fatal("subnet not found")
+	}
+
+	sgs, err := vpcCli.DescribeSecurityGroups(&vpc.DescribeSecurityGroupsArgs{})
+	if err != nil {
 		t.Fatal(err)
 	} else if len(sgs) == 0 {
 		t.Fatal("SecurityGroups not found")
-	} else {
-		securityGroupId = sgs[0].VpcId
 	}
 
 	_, err = client.RunInstances(&RunInstancesArgs{
-		ImageId:          images[0].ImageId,
-		SecurityGroupId:  securityGroupId,
-		SubnetId:         vpcId,
+		ImageId:          "7aa79b22-a840-4836-a7ad-d440a0cf8bef",
+		SecurityGroupId:  sgs[0].SecurityGroupId,
+		SubnetId:         sbs[0].SubnetId,
+		InstanceType:     "I1.1A",
 		MinCount:         1,
 		MaxCount:         1,
-		InstancePassword: "123456qweQWE",
-		InstanceName:     "test",
-		ChargeType:       "Daily",
+		InstancePassword: "Xiaowenrou123",
+		InstanceName:     "michael",
+		ChargeType:       "Monthly",
+		DataDiskGb:       0,
+		PurchaseTime:     1,
 	})
 	if err != nil {
 		t.Fatal(err)

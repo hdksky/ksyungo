@@ -1,6 +1,8 @@
 package eip
 
 import (
+	"fmt"
+	"github.com/hdksky/ksyungo/slb"
 	"testing"
 )
 
@@ -29,10 +31,12 @@ func TestClient_AllocateAddress(t *testing.T) {
 
 func TestClient_DescribeAddresses(t *testing.T) {
 	client := NewClient(testAccessKeyId, testAccessKeySecret, regions[0])
-	_, err := client.DescribeAddresses(&DescribeAddressesArgs{})
+	eips, err := client.DescribeAddresses(&DescribeAddressesArgs{})
 	if err != nil {
 		t.Fatal(err)
 	}
+
+	fmt.Printf("%#v\n", eips)
 }
 
 func TestClient_ReleaseAddress(t *testing.T) {
@@ -86,4 +90,23 @@ func TestClient_ModifyAddress(t *testing.T) {
 	if _, err := client.ModifyAddress(&modifyArgs); err != nil {
 		t.Fatal(err)
 	}
+}
+
+func TestClient_AssociateAddress(t *testing.T) {
+	slbCli := slb.NewClient(testAccessKeyId, testAccessKeySecret, regions[0])
+	slbs, err := slbCli.DescribeLoadBalancers(&slb.DescribeLoadBalancersArgs{
+		State: slb.State_Disassociate,
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	eipCli := NewClient(testAccessKeyId, testAccessKeySecret, regions[0])
+	eips, err := eipCli.DescribeAddresses(&DescribeAddressesArgs{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	fmt.Printf("-----slbs %v\n", slbs)
+	fmt.Printf("-----eips %v\n", eips)
+	//eipCli.AssociateAddress(&AssociateAddressArgs{})
 }

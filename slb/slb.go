@@ -1,9 +1,14 @@
 package slb
 
 import (
-	"time"
-
+	"errors"
 	"github.com/hdksky/ksyungo/common"
+	"github.com/hdksky/ksyungo/util"
+)
+
+const (
+	LoadBalancerType_Public   = "public"
+	LoadBalancerType_Internal = "internal"
 )
 
 type CreateLoadBalancerArgs struct {
@@ -13,8 +18,24 @@ type CreateLoadBalancerArgs struct {
 	SubnetId         string
 }
 
+func (a CreateLoadBalancerArgs) validate() error {
+	if len(a.VpcId) == 0 {
+		return util.ParamNotFoundErr("VpcId")
+	}
+
+	if len(a.Type) != 0 && a.Type != LoadBalancerType_Internal && a.Type != LoadBalancerType_Public {
+		return util.ParamInvalid("Type")
+	}
+
+	if a.Type == LoadBalancerType_Internal && len(a.SubnetId) == 0 {
+		return util.ParamNotFoundErr("SubnetId")
+	}
+
+	return nil
+}
+
 type LoadBalancerDescription struct {
-	CreateTime        time.Time
+	CreateTime        string
 	LoadBalancerName  string
 	VpcId             string
 	LoadBalancerId    string
@@ -33,6 +54,14 @@ type CreateLoadBalancerResponse struct {
 // CreateLoadBalancer create load balancer
 // You can read doc at https://docs.ksyun.com/read/latest/55/_book/Action/CreateLoadBalancer.html
 func (c *Client) CreateLoadBalancer(args *CreateLoadBalancerArgs) ([]LoadBalancerDescription, error) {
+	if args == nil {
+		return nil, errors.New("create loadBalancer args nil")
+	}
+
+	if err := args.validate(); err != nil {
+		return nil, err
+	}
+
 	response := CreateLoadBalancerResponse{}
 	err := c.Invoke("CreateLoadBalancer", args, &response)
 	if err == nil {
@@ -51,6 +80,10 @@ func (c *Client) CreateLoadBalancer(args *CreateLoadBalancerArgs) ([]LoadBalance
 	return nil, err
 }
 
+type DeleteLoadBalancerArgs struct {
+	LoadBalancerId string
+}
+
 type DeleteLoadBalancerResponse struct {
 	common.Response
 	Return bool
@@ -58,14 +91,23 @@ type DeleteLoadBalancerResponse struct {
 
 // DeleteLoadBalancer delete load balancer
 // You can read doc at https://docs.ksyun.com/read/latest/55/_book/Action/CreateLoadBalancer.html
-func (c *Client) DeleteLoadBalancer(loadBalancerId string) (bool, error) {
+func (c *Client) DeleteLoadBalancer(args *DeleteLoadBalancerArgs) (bool, error) {
+	if len(args.LoadBalancerId) == 0 {
+		return false, util.ParamNotFoundErr("LoadBalancerId")
+	}
+
 	response := DeleteLoadBalancerResponse{}
-	err := c.Invoke("DeleteLoadBalancer", loadBalancerId, &response)
+	err := c.Invoke("DeleteLoadBalancer", args, &response)
 	if err == nil {
 		return response.Return, nil
 	}
 	return false, err
 }
+
+const (
+	LoadBalancerState_Stop  = "stop"
+	LoadBalancerState_Start = "start"
+)
 
 type ModifyLoadBalancerArgs struct {
 	LoadBalancerId    string
@@ -91,7 +133,7 @@ func (c *Client) ModifyLoadBalancer(args *ModifyLoadBalancerArgs) (*ModifyLoadBa
 
 type KV struct {
 	Name  string
-	Value string
+	Value []string
 }
 
 type DescribeLoadBalancersArgs struct {
@@ -106,6 +148,11 @@ type LoadBalancerDescriptionResponse struct {
 		Item []LoadBalancerDescription
 	}
 }
+
+const (
+	State_Associate    = "associate"
+	State_Disassociate = "disassociate"
+)
 
 // DescribeLoadBalancers describe load balancer
 // You can read doc at https://docs.ksyun.com/read/latest/55/_book/Action/DescribeLoadBalancers.html

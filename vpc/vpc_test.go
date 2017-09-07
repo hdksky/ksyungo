@@ -41,7 +41,6 @@ func TestClient_DescribeSubnets(t *testing.T) {
 
 func TestClient_DescribeSecurityGroups(t *testing.T) {
 	cli := NewClient("AKLTUxyeuc11TQ2gRi2yJN7FiA", "OHp/RfCLH+/c5rrH/+k0g9Mih3289ZonVyMITpordadELY6CzsECZcIc+X/oslbJCQ==", "cn-beijing-6")
-	cli.SetDebug(true)
 	if _, err := cli.DescribeSecurityGroups(&DescribeSecurityGroupsArgs{}); err != nil {
 		t.Fatal(err)
 	}

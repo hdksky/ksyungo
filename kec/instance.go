@@ -89,7 +89,7 @@ func (c *Client) DescribeInstances(args *DescribeInstancesArgs) (*DescribeInstan
 type RunInstancesArgs struct {
 	ImageId            string
 	InstanceType       string
-	DataDiskGb         string
+	DataDiskGb         uint16
 	MaxCount           int
 	MinCount           int
 	SubnetId           string
