@@ -13,7 +13,7 @@ var (
 	}
 
 	tp_I1 *InstanceType = &InstanceType{
-		Name:           "I1",
+		Family:         "I1",
 		ShowName:       "IO优化型I1",
 		Definition:     "IO优化型I1实例是高磁盘IO的最佳选择，提供每秒数万次低延迟性随机 I/O 操作(IOPS)",
 		UseCase:        "适合于低延时、I/O密集型应用。",
@@ -42,7 +42,7 @@ var (
 	}
 
 	tp_C1 *InstanceType = &InstanceType{
-		Name:           "C1",
+		Family:         "C1",
 		ShowName:       "计算优化型C1",
 		Definition:     "采用Intel Xeon E5-2680 v3 (Haswell) 处理器，2.5GHz的主频，DDR4内存。是高磁盘IO的最佳选择，提供每秒数万次低延迟性随机I/O操作（IOPS）",
 		UseCase:        "建议用于游戏服务器、数据库服务器。",
@@ -77,7 +77,7 @@ var (
 	}
 
 	tp_I2 *InstanceType = &InstanceType{
-		Name:           "I2",
+		Family:         "I2",
 		ShowName:       "IO优化型I2",
 		Definition:     "采用Intel Xeon E5-2690 v4 (Broadwell)处理器，2.6GHz的高主频，DDR4内存。是高磁盘IO的最佳选择，提供每秒数万次低延迟性随机I/O操作（IOPS）",
 		UseCase:        "适合于低延时、I/O密集型应用，建议用于游戏服务器、数据库服务器和高性能Web服务器等对I/O和计算性能均要求较高的场景。",
@@ -114,7 +114,7 @@ var (
 	}
 
 	tp_I1_Enhance *InstanceType = &InstanceType{
-		Name:           "I1",
+		Family:         "I1_E",
 		ShowName:       "计算优化型I1联网增强",
 		Definition:     "相比于前一代联网增强，联网增强2.0对基础架构做了优化调整。在精确管理PPS转发持久稳定的同时支持了更多云服务器类型和全类型操作系统。",
 		UseCase:        "视频直播、即时通讯、房间式强联网网游等对网络实时性要求较高的应用。",
@@ -134,7 +134,7 @@ var (
 	}
 
 	tp_C1_Enhance *InstanceType = &InstanceType{
-		Name:           "C1",
+		Family:         "C1_E",
 		ShowName:       "IO优化型C1联网增强",
 		Definition:     "相比于前一代联网增强，联网增强2.0对基础架构做了优化调整。在精确管理PPS转发持久稳定的同时支持了更多云服务器类型和全类型操作系统。",
 		UseCase:        "视频直播、即时通讯、房间式强联网网游等对网络实时性要求较高的应用。",
@@ -160,7 +160,7 @@ var (
 	}
 
 	tp_I2_Enhance *InstanceType = &InstanceType{
-		Name:           "I2",
+		Family:         "I2_E",
 		ShowName:       "IO优化型I2联网增强",
 		Definition:     "相比于前一代联网增强，联网增强2.0对基础架构做了优化调整。在精确管理PPS转发持久稳定的同时支持了更多云服务器类型和全类型操作系统。",
 		UseCase:        "视频直播、即时通讯、房间式强联网网游等对网络实时性要求较高的应用。",
@@ -188,15 +188,15 @@ var (
 )
 
 type InstanceTypeItem struct {
-	Name      string
-	Cpu       uint8
-	Memory    uint16
-	VolumnMin uint16
-	VolumnMax uint16
+	InstanceTypeId string
+	CpuCoreCount   uint8
+	MemorySize     uint16
+	VolumnMin      uint16
+	VolumnMax      uint16
 }
 
 type InstanceType struct {
-	Name           string
+	Family         string
 	ShowName       string
 	Definition     string
 	UseCase        string
@@ -212,4 +212,23 @@ func DescribeInstanceTypes(zone string) ([]*InstanceType, error) {
 		return nil, errors.New("zone not exist")
 	}
 	return plans, nil
+}
+
+func DescribeInstanceTypeFamilies(family string) (*InstanceType, error) {
+	switch family {
+	case tp_I1.Family:
+		return tp_I1, nil
+	case tp_C1.Family:
+		return tp_C1, nil
+	case tp_I2.Family:
+		return tp_I2, nil
+	case tp_I1_Enhance.Family:
+		return tp_I1_Enhance, nil
+	case tp_C1_Enhance.Family:
+		return tp_C1_Enhance, nil
+	case tp_I2_Enhance.Family:
+		return tp_I2_Enhance, nil
+	default:
+		return nil, errors.New("family not exists")
+	}
 }

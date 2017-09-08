@@ -62,8 +62,7 @@ func TestClient_RunInstances(t *testing.T) {
 func TestClient_DescribeInstances(t *testing.T) {
 	client := NewTestClientForDebug()
 
-	i, err := client.DescribeInstances(&DescribeInstancesArgs{
-		Filter: []KV{KV{Name: "instance-id", Value: []string{"123", "456"}}}})
+	i, err := client.DescribeInstances(&DescribeInstancesArgs{})
 	if err != nil {
 		t.Fatal(err)
 	}

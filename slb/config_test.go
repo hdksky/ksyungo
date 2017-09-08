@@ -10,6 +10,7 @@ const (
 	TestQuick           = false
 )
 
+
 var testClient *Client
 
 func NewTestClient() *Client {
