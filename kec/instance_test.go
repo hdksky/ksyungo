@@ -59,10 +59,39 @@ func TestClient_RunInstances(t *testing.T) {
 	}
 }
 
-func TestClient_DescribeInstances(t *testing.T) {
+func TestClient_DescribeInstances_All(t *testing.T) {
+	client := NewTestClientForDebug()
+	i, err := client.DescribeInstances(&DescribeInstancesArgs{})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	fmt.Printf("%#v\n", i)
+}
+
+func TestClient_DescribeInstances_By_Filter_VpcId(t *testing.T) {
 	client := NewTestClientForDebug()
 
-	i, err := client.DescribeInstances(&DescribeInstancesArgs{})
+	var vpcIds []string
+	vpcCli := vpc.NewClient(TestAccessKeyId, TestAccessKeySecret, TestRegionId)
+	if vpcs, err := vpcCli.DescribeVpcs(nil); err != nil {
+		t.Fatal(err)
+	} else if len(vpcs.VpcSet.Item) == 0 {
+		t.Fatal("Vpcs not found")
+	} else {
+		for _, vpc := range vpcs.VpcSet.Item {
+			vpcIds = append(vpcIds, vpc.VpcId)
+		}
+	}
+
+	i, err := client.DescribeInstances(&DescribeInstancesArgs{
+		Filter: []KV{
+			{
+				Name:  "vpc-id",
+				Value: []string{"b80600f2-3d02-4060-8497-5ac755f3846e"},
+			},
+		},
+	})
 	if err != nil {
 		t.Fatal(err)
 	}
