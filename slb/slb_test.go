@@ -4,6 +4,7 @@ import (
 	"github.com/hdksky/ksyungo/region"
 	"github.com/hdksky/ksyungo/vpc"
 	"testing"
+	"fmt"
 )
 
 func TestClient_CreateLoadBalancer_Pub(t *testing.T) {
@@ -94,6 +95,19 @@ func TestClient_DeleteLoadBalancer(t *testing.T) {
 	if !ok {
 		t.Fatal("delete loadBalancer error")
 	}
+}
+
+func TestClient_DescribeLoadBalancers_All(t *testing.T) {
+	client := NewTestClientForDebug()
+
+	var allLbs []LoadBalancerDescription
+	var err error
+	if allLbs, err = client.DescribeLoadBalancers(&DescribeLoadBalancersArgs{
+
+	}); err != nil {
+		t.Fatal(err)
+	}
+	fmt.Printf("%#v\n", allLbs)
 }
 
 func TestClient_DescribeLoadBalancers(t *testing.T) {

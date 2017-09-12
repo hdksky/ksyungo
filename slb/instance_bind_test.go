@@ -87,7 +87,14 @@ start:
 
 func TestClient_DescribeInstancesWithListener(t *testing.T) {
 	client := NewTestClientForDebug()
-	bindings, err := client.DescribeInstancesWithListener(&DescribeInstancesWithListenerArgs{})
+	bindings, err := client.DescribeInstancesWithListener(&DescribeInstancesWithListenerArgs{
+		Filter: []KV{
+			{
+				Name:"listener-id",
+				Value: []string{"386fee8f-a5cc-4000-b3d8-dbee790d5b01", "1e70dd01-a43e-44cf-bc78-2f2cc78cb344"},
+			},
+		},
+	})
 	if err != nil {
 		t.Fatal(err)
 	}

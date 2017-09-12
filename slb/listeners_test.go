@@ -4,9 +4,9 @@ import (
 	"testing"
 )
 
-func TestDescribeLoadBalancer(t *testing.T) {
+func TestClient_DescribeListeners(t *testing.T) {
 	client := NewTestClientForDebug()
-	lbs, err := client.DescribeLoadBalancers(&DescribeLoadBalancersArgs{})
+	lbs, err := client.DescribeListeners(&DescribeListenersArgs{})
 	if err != nil {
 		t.Errorf("DescribeLoadBalancers failed: %v", err)
 		return
