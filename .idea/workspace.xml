@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03f4a9ad-153d-4f25-a5c1-54788c88c191" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kec/instance.go" afterPath="$PROJECT_DIR$/kec/instance.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kec/instance_test.go" afterPath="$PROJECT_DIR$/kec/instance_test.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slb/instance_bind.go" afterPath="$PROJECT_DIR$/slb/instance_bind.go" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="instance_bind.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/slb/instance_bind.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <folding>
+                <element signature="e#13#210#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="instance.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kec/instance.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <folding>
+                <element signature="e#110#150#0" expanded="false" />
+                <element signature="e#435#474#0" expanded="false" />
+                <element signature="e#505#777#0" expanded="false" />
+                <element signature="e#793#1218#0" expanded="false" />
+                <element signature="e#1251#1361#0" expanded="false" />
+                <element signature="e#1709#1737#0" expanded="false" />
+                <element signature="e#1780#2157#0" expanded="false" />
+                <element signature="e#2185#2256#0" expanded="false" />
+                <element signature="n#!!block;n#RunInstances#0" expanded="false" />
+                <element signature="e#2493#2515#0" expanded="false" />
+                <element signature="e#2617#2662#0" expanded="false" />
+                <element signature="e#2711#2742#0" expanded="false" />
+                <element signature="n#!!block;n#TerminateInstances#0" expanded="false" />
+                <element signature="e#3380#3425#0" expanded="false" />
+                <element signature="n#!!block;n#StartInstances#0" expanded="false" />
+                <element signature="e#3880#3925#0" expanded="false" />
+                <element signature="e#3969#4001#0" expanded="false" />
+                <element signature="n#!!block;n#StopInstances#0" expanded="false" />
+                <element signature="e#4374#4419#0" expanded="false" />
+                <element signature="e#4465#4497#0" expanded="false" />
+                <element signature="n#!!block;n#RebootInstances#0" expanded="false" />
+                <element signature="e#4881#4926#0" expanded="false" />
+                <element signature="e#4980#5065#0" expanded="false" />
+                <element signature="e#5104#5146#0" expanded="false" />
+                <element signature="n#!!block;n#ModifyInstanceAttribute#0" expanded="false" />
+                <element signature="e#5418#5452#0" expanded="false" />
+                <element signature="e#5500#5570#0" expanded="false" />
+                <element signature="e#5604#5644#0" expanded="false" />
+                <element signature="n#!!block;n#ModifyInstanceType#0" expanded="false" />
+                <element signature="e#5965#5999#0" expanded="false" />
+                <element signature="e#6051#6136#0" expanded="false" />
+                <element signature="e#6171#6211#0" expanded="false" />
+                <element signature="n#!!block;n#ModifyInstanceImage#0" expanded="false" />
+                <element signature="e#6543#6577#0" expanded="false" />
+                <element signature="e#6633#6675#0" expanded="false" />
+                <element signature="n#!!block;n#DescribeInstanceVnc#0" expanded="false" />
+                <element signature="e#6997#7031#0" expanded="false" />
+                <element signature="e#7083#7195#0" expanded="false" />
+                <element signature="e#7233#7273#0" expanded="false" />
+                <element signature="n#!!block;n#AttachNetworkInterface#0" expanded="false" />
+                <element signature="e#7617#7651#0" expanded="false" />
+                <element signature="e#7715#7916#0" expanded="false" />
+                <element signature="e#7963#8003#0" expanded="false" />
+                <element signature="n#!!block;n#ModifyNetworkInterfaceAttribute#0" expanded="false" />
+                <element signature="e#8404#8438#0" expanded="false" />
+                <element signature="e#8493#8557#0" expanded="false" />
+                <element signature="e#8594#8634#0" expanded="false" />
+                <element signature="n#!!block;n#DetachNetworkInterface#0" expanded="false" />
+                <element signature="e#8979#9013#0" expanded="false" />
+                <element signature="e#9062#9087#0" expanded="false" />
+                <element signature="n#!!block;n#AvailabilityZone#0" expanded="false" />
+                <element signature="e#9258#9275#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="instance_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kec/instance_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1584">
+              <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="port.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../1851616111/util/validator/port/port.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="e#19#104#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/slb/instance_bind.go" />
+        <option value="$PROJECT_DIR$/kec/instance.go" />
+        <option value="$PROJECT_DIR$/kec/instance_test.go" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="100" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ksyungo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ksyungo" type="462c0819:PsiDirectoryNode" />
+              <item name="kec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ksyungo" type="462c0819:PsiDirectoryNode" />
+              <item name="slb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;ksyungo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;ksyungo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;ksyungo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;ksyungo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="1851616111" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;ksyungo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="1851616111" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;ksyungo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="1851616111" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="validator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ksyungo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;ksyungo&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="1851616111" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="validator" type="462c0819:PsiDirectoryNode" />
+              <item name="port" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Go Test.TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go">
+    <configuration name="TestClient_DescribeInstances_All in instance_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="ksyungo" />
+      <working_directory value="$PROJECT_DIR$/kec" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/hdksky/ksyungo/kec" />
+      <pattern value="^TestClient_DescribeInstances_All$" />
+    </configuration>
+    <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="ksyungo" />
+      <working_directory value="$PROJECT_DIR$/kec" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/hdksky/ksyungo/kec" />
+      <pattern value="^TestClient_DescribeInstances_By_Filter_InstanceIds$" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Go Test.TestClient_DescribeInstances_All in instance_test.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Go Test.TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.TestClient_DescribeInstances_All in instance_test.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03f4a9ad-153d-4f25-a5c1-54788c88c191" name="Default" comment="" />
+      <created>1505376046370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1505376046370</updated>
+      <workItem from="1505376047996" duration="262000" />
+      <workItem from="1505382804682" duration="2578000" />
+      <workItem from="1507538802665" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TestClient_DescribeInstances_All_in_instance_test_go - 2017.09.14 at 17h 57m 15s.xml">
+      <configuration name="TestClient_DescribeInstances_All in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestClient_DescribeInstances_By_Filter_InstanceIds_in_instance_test_go - 2017.09.14 at 17h 59m 23s.xml">
+      <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestClient_DescribeInstances_By_Filter_InstanceIds_in_instance_test_go - 2017.09.14 at 18h 00m 21s.xml">
+      <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestClient_DescribeInstances_By_Filter_InstanceIds_in_instance_test_go - 2017.09.14 at 18h 00m 36s.xml">
+      <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestClient_DescribeInstances_By_Filter_InstanceIds_in_instance_test_go - 2017.09.14 at 18h 00m 46s.xml">
+      <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestClient_DescribeInstances_By_Filter_InstanceIds_in_instance_test_go - 2017.09.14 at 18h 01m 14s.xml">
+      <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestClient_DescribeInstances_By_Filter_InstanceIds_in_instance_test_go - 2017.09.14 at 18h 01m 31s.xml">
+      <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestClient_DescribeInstances_By_Filter_InstanceIds_in_instance_test_go - 2017.09.14 at 18h 04m 19s.xml">
+      <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestClient_DescribeInstances_By_Filter_InstanceIds_in_instance_test_go - 2017.09.15 at 10h 10m 27s.xml">
+      <configuration name="TestClient_DescribeInstances_By_Filter_InstanceIds in instance_test.go" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2855000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="54" y="-8" width="1554" height="916" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1316129" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12774193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25704697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/slb/instance_bind.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="e#13#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kec/instance_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="76" column="19" lean-forward="true" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../1851616111/util/validator/port/port.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#19#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kec/instance.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#110#150#0" expanded="false" />
+            <element signature="e#435#474#0" expanded="false" />
+            <element signature="e#505#777#0" expanded="false" />
+            <element signature="e#793#1218#0" expanded="false" />
+            <element signature="e#1251#1361#0" expanded="false" />
+            <element signature="e#1709#1737#0" expanded="false" />
+            <element signature="e#1780#2157#0" expanded="false" />
+            <element signature="e#2185#2256#0" expanded="false" />
+            <element signature="n#!!block;n#RunInstances#0" expanded="false" />
+            <element signature="e#2493#2515#0" expanded="false" />
+            <element signature="e#2617#2662#0" expanded="false" />
+            <element signature="e#2711#2742#0" expanded="false" />
+            <element signature="n#!!block;n#TerminateInstances#0" expanded="false" />
+            <element signature="e#3380#3425#0" expanded="false" />
+            <element signature="n#!!block;n#StartInstances#0" expanded="false" />
+            <element signature="e#3880#3925#0" expanded="false" />
+            <element signature="e#3969#4001#0" expanded="false" />
+            <element signature="n#!!block;n#StopInstances#0" expanded="false" />
+            <element signature="e#4374#4419#0" expanded="false" />
+            <element signature="e#4465#4497#0" expanded="false" />
+            <element signature="n#!!block;n#RebootInstances#0" expanded="false" />
+            <element signature="e#4881#4926#0" expanded="false" />
+            <element signature="e#4980#5065#0" expanded="false" />
+            <element signature="e#5104#5146#0" expanded="false" />
+            <element signature="n#!!block;n#ModifyInstanceAttribute#0" expanded="false" />
+            <element signature="e#5418#5452#0" expanded="false" />
+            <element signature="e#5500#5570#0" expanded="false" />
+            <element signature="e#5604#5644#0" expanded="false" />
+            <element signature="n#!!block;n#ModifyInstanceType#0" expanded="false" />
+            <element signature="e#5965#5999#0" expanded="false" />
+            <element signature="e#6051#6136#0" expanded="false" />
+            <element signature="e#6171#6211#0" expanded="false" />
+            <element signature="n#!!block;n#ModifyInstanceImage#0" expanded="false" />
+            <element signature="e#6543#6577#0" expanded="false" />
+            <element signature="e#6633#6675#0" expanded="false" />
+            <element signature="n#!!block;n#DescribeInstanceVnc#0" expanded="false" />
+            <element signature="e#6997#7031#0" expanded="false" />
+            <element signature="e#7083#7195#0" expanded="false" />
+            <element signature="e#7233#7273#0" expanded="false" />
+            <element signature="n#!!block;n#AttachNetworkInterface#0" expanded="false" />
+            <element signature="e#7617#7651#0" expanded="false" />
+            <element signature="e#7715#7916#0" expanded="false" />
+            <element signature="e#7963#8003#0" expanded="false" />
+            <element signature="n#!!block;n#ModifyNetworkInterfaceAttribute#0" expanded="false" />
+            <element signature="e#8404#8438#0" expanded="false" />
+            <element signature="e#8493#8557#0" expanded="false" />
+            <element signature="e#8594#8634#0" expanded="false" />
+            <element signature="n#!!block;n#DetachNetworkInterface#0" expanded="false" />
+            <element signature="e#8979#9013#0" expanded="false" />
+            <element signature="e#9062#9087#0" expanded="false" />
+            <element signature="n#!!block;n#AvailabilityZone#0" expanded="false" />
+            <element signature="e#9258#9275#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb/instance_bind.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#13#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../1851616111/util/validator/port/port.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#19#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../1851616111/util/validator/port/port.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#19#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kec/instance_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="76" column="19" lean-forward="false" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kec/instance.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#110#150#0" expanded="false" />
+            <element signature="e#435#474#0" expanded="false" />
+            <element signature="e#505#777#0" expanded="false" />
+            <element signature="e#793#1218#0" expanded="false" />
+            <element signature="e#1251#1361#0" expanded="false" />
+            <element signature="e#1709#1737#0" expanded="false" />
+            <element signature="e#1780#2157#0" expanded="false" />
+            <element signature="e#2185#2256#0" expanded="false" />
+            <element signature="n#!!block;n#RunInstances#0" expanded="false" />
+            <element signature="e#2493#2515#0" expanded="false" />
+            <element signature="e#2617#2662#0" expanded="false" />
+            <element signature="e#2711#2742#0" expanded="false" />
+            <element signature="n#!!block;n#TerminateInstances#0" expanded="false" />
+            <element signature="e#3380#3425#0" expanded="false" />
+            <element signature="n#!!block;n#StartInstances#0" expanded="false" />
+            <element signature="e#3880#3925#0" expanded="false" />
+            <element signature="e#3969#4001#0" expanded="false" />
+            <element signature="n#!!block;n#StopInstances#0" expanded="false" />
+            <element signature="e#4374#4419#0" expanded="false" />
+            <element signature="e#4465#4497#0" expanded="false" />
+            <element signature="n#!!block;n#RebootInstances#0" expanded="false" />
+            <element signature="e#4881#4926#0" expanded="false" />
+            <element signature="e#4980#5065#0" expanded="false" />
+            <element signature="e#5104#5146#0" expanded="false" />
+            <element signature="n#!!block;n#ModifyInstanceAttribute#0" expanded="false" />
+            <element signature="e#5418#5452#0" expanded="false" />
+            <element signature="e#5500#5570#0" expanded="false" />
+            <element signature="e#5604#5644#0" expanded="false" />
+            <element signature="n#!!block;n#ModifyInstanceType#0" expanded="false" />
+            <element signature="e#5965#5999#0" expanded="false" />
+            <element signature="e#6051#6136#0" expanded="false" />
+            <element signature="e#6171#6211#0" expanded="false" />
+            <element signature="n#!!block;n#ModifyInstanceImage#0" expanded="false" />
+            <element signature="e#6543#6577#0" expanded="false" />
+            <element signature="e#6633#6675#0" expanded="false" />
+            <element signature="n#!!block;n#DescribeInstanceVnc#0" expanded="false" />
+            <element signature="e#6997#7031#0" expanded="false" />
+            <element signature="e#7083#7195#0" expanded="false" />
+            <element signature="e#7233#7273#0" expanded="false" />
+            <element signature="n#!!block;n#AttachNetworkInterface#0" expanded="false" />
+            <element signature="e#7617#7651#0" expanded="false" />
+            <element signature="e#7715#7916#0" expanded="false" />
+            <element signature="e#7963#8003#0" expanded="false" />
+            <element signature="n#!!block;n#ModifyNetworkInterfaceAttribute#0" expanded="false" />
+            <element signature="e#8404#8438#0" expanded="false" />
+            <element signature="e#8493#8557#0" expanded="false" />
+            <element signature="e#8594#8634#0" expanded="false" />
+            <element signature="n#!!block;n#DetachNetworkInterface#0" expanded="false" />
+            <element signature="e#8979#9013#0" expanded="false" />
+            <element signature="e#9062#9087#0" expanded="false" />
+            <element signature="n#!!block;n#AvailabilityZone#0" expanded="false" />
+            <element signature="e#9258#9275#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb/instance_bind.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="e#13#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

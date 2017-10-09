@@ -14,7 +14,7 @@ type KV struct {
 type DescribeInstancesArgs struct {
 	MaxResults int
 	Marker     int
-	InstanceId string
+	InstanceId []string
 	Filter     []KV
 	Sort       []KV
 	Search     string

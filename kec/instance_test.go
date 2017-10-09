@@ -69,6 +69,22 @@ func TestClient_DescribeInstances_All(t *testing.T) {
 	fmt.Printf("%#v\n", i)
 }
 
+func TestClient_DescribeInstances_By_Filter_InstanceIds(t *testing.T) {
+	client := NewTestClientForDebug()
+	i, err := client.DescribeInstances(&DescribeInstancesArgs{
+		InstanceId: []string{"6838aec5-422e-422f-ad6f-91d416b7b2f4"},
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if len(i.InstancesSet.Item) != 1  {
+		t.Fail()
+	}
+
+	fmt.Printf("\n\n%#v\n", i)
+}
+
 func TestClient_DescribeInstances_By_Filter_VpcId(t *testing.T) {
 	client := NewTestClientForDebug()
 

@@ -31,7 +31,7 @@ func (a *RegisterInstancesWithListenerArgs) validate() error {
 		return err
 	}
 
-	if err := pt.ValidatePortNum(a.RealServerPort); err != nil {
+	if err := pt.ValidateInt(a.RealServerPort); err != nil {
 		return err
 	}
 	//
